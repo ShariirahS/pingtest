@@ -9,4 +9,11 @@ jobs:
     steps:
       - name: Run ping
         run: |
-          ping -c 4 8.8.8.8
+          set -euxo pipefail
+          echo "Ping Cloudflare:"
+          ping -c 4 1.1.1.1 || true
+      
+          echo "DNS resolve + HTTPS check:"
+          getent hosts example.com
+          curl -I https://example.com
+          
