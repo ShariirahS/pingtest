@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Run ping
         run: |
-          ping -c 4 94.182.26.97
+          ping -c 4 8.8.8.8
