@@ -1,0 +1,12 @@
+name: Ping Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ping_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ping
+        run: |
+          ping -c 4 94.182.26.97
